@@ -23,7 +23,7 @@ test('messages(pattern)', async (t) => {
     handlers: {
       messages (pattern) {
         const sub = bus.sub(pattern)
-        bus.pub({ some: 'props', to: { pattern: ['match', 'against'] }})
+        bus.pub({ some: 'props', to: { pattern: ['match', 'against'] } })
         setImmediate(() => sub.end())
         return sub
       }
@@ -42,7 +42,7 @@ test('messages(pattern)', async (t) => {
 
   const stream = messages({ some: 'props' })
   stream.on('data', (msg) => {
-    t.alike({ some: 'props', to: { pattern: ['match', 'against'] }}, msg)
+    t.alike({ some: 'props', to: { pattern: ['match', 'against'] } }, msg)
   })
 })
 
@@ -56,7 +56,7 @@ test('messages(pattern, listener)', async (t) => {
     handlers: {
       messages (pattern) {
         const sub = bus.sub(pattern)
-        bus.pub({ some: 'props', to: { pattern: ['match', 'against'] }})
+        bus.pub({ some: 'props', to: { pattern: ['match', 'against'] } })
         setImmediate(() => sub.end())
         return sub
       }
@@ -74,7 +74,7 @@ test('messages(pattern, listener)', async (t) => {
   global.Pear = new API()
 
   messages({ some: 'props' }, (msg) => {
-    t.alike({ some: 'props', to: { pattern: ['match', 'against'] }}, msg)
+    t.alike({ some: 'props', to: { pattern: ['match', 'against'] } }, msg)
   })
 })
 
@@ -88,7 +88,7 @@ test('messages(listener, pattern)', async (t) => {
     handlers: {
       messages (pattern) {
         const sub = bus.sub(pattern)
-        bus.pub({ some: 'props', to: { pattern: ['match', 'against'] }})
+        bus.pub({ some: 'props', to: { pattern: ['match', 'against'] } })
         setImmediate(() => sub.end())
         return sub
       }
@@ -106,6 +106,6 @@ test('messages(listener, pattern)', async (t) => {
   global.Pear = new API()
 
   messages((msg) => {
-    t.alike({ some: 'props', to: { pattern: ['match', 'against'] }}, msg)
+    t.alike({ some: 'props', to: { pattern: ['match', 'against'] } }, msg)
   }, { some: 'props' })
 })
