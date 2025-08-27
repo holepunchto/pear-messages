@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "b4a": "^1.6.7",
-    "pear-ipc": "^5.5.0",
+    "pear-ipc": "^6.5.0",
     "pear-ref": "^1.0.1",
     "sodium-native": "^5.0.6"
   }
