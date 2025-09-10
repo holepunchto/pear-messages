@@ -1,6 +1,6 @@
 {
   "name": "pear-messages",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "type": "commonjs",
   "description": "Receive object messages from a Pear application's processes/threads using object pattern-matching",
