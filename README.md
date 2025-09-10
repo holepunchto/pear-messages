@@ -36,7 +36,7 @@ The subscriber stream has a `data` event which can be listened to, it can also b
 
 A message object may have any properties. Platform-generated messages are given a `type` property.
 
-The message stream is auto-ended at the end of the [`Pear.teardown`](https://docs.pears.com/api#pear-teardown) flow.
+The message stream is auto-ended during [`Pear.teardown`](https://docs.pears.com/api#pear-teardown).
 
 #### Examples:
 

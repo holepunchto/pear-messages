@@ -38,7 +38,7 @@ test('messages(pattern)', async (t) => {
     static IPC = kIPC
     get [kIPC] () { return ipc }
     teardown (fn, pos) {
-      t.is(pos, Infinity)
+      t.is(pos, undefined)
     }
   }
   global.Pear = new API()
@@ -74,7 +74,7 @@ test('messages(pattern, listener)', async (t) => {
     static IPC = kIPC
     get [kIPC] () { return ipc }
     teardown (fn, pos) {
-      t.is(pos, Infinity)
+      t.is(pos, undefined)
     }
   }
   global.Pear = new API()
@@ -109,7 +109,7 @@ test('messages(listener, pattern)', async (t) => {
     static IPC = kIPC
     get [kIPC] () { return ipc }
     teardown (fn, pos) {
-      t.is(pos, Infinity)
+      t.is(pos, undefined)
     }
   }
   global.Pear = new API()
