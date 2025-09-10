@@ -9,6 +9,7 @@ function messages (pattern, listener) {
   }
   ref.ref()
   const subscriber = ipc.messages(pattern)
+  Pear.teardown(() => subscriber.end(), Infinity)
   subscriber.on('close', () => ref.unref())
   if (typeof listener === 'function') subscriber.on('data', listener)
   return subscriber

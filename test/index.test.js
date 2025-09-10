@@ -14,7 +14,7 @@ function pipeId (s) {
 }
 
 test('messages(pattern)', async (t) => {
-  t.plan(1)
+  t.plan(2)
   const kIPC = Symbol('test.ipc')
   const socketPath = isWindows ? `\\\\.\\pipe\\test-${pipeId(__dirname)}` : __dirname + '/test.sock' // eslint-disable-line
   const bus = new Iambus()
@@ -37,6 +37,9 @@ test('messages(pattern)', async (t) => {
   class API {
     static IPC = kIPC
     get [kIPC] () { return ipc }
+    teardown (fn, pos) {
+      t.is(pos, Infinity)
+    }
   }
   global.Pear = new API()
 
@@ -47,7 +50,7 @@ test('messages(pattern)', async (t) => {
 })
 
 test('messages(pattern, listener)', async (t) => {
-  t.plan(1)
+  t.plan(2)
   const kIPC = Symbol('test.ipc')
   const socketPath = isWindows ? `\\\\.\\pipe\\test-${pipeId(__dirname)}` : __dirname + '/test.sock' // eslint-disable-line
   const bus = new Iambus()
@@ -70,6 +73,9 @@ test('messages(pattern, listener)', async (t) => {
   class API {
     static IPC = kIPC
     get [kIPC] () { return ipc }
+    teardown (fn, pos) {
+      t.is(pos, Infinity)
+    }
   }
   global.Pear = new API()
 
@@ -79,7 +85,7 @@ test('messages(pattern, listener)', async (t) => {
 })
 
 test('messages(listener, pattern)', async (t) => {
-  t.plan(1)
+  t.plan(2)
   const kIPC = Symbol('test.ipc')
   const socketPath = isWindows ? `\\\\.\\pipe\\test-${pipeId(__dirname)}` : __dirname + '/test.sock' // eslint-disable-line
   const bus = new Iambus()
@@ -102,6 +108,9 @@ test('messages(listener, pattern)', async (t) => {
   class API {
     static IPC = kIPC
     get [kIPC] () { return ipc }
+    teardown (fn, pos) {
+      t.is(pos, Infinity)
+    }
   }
   global.Pear = new API()
 
