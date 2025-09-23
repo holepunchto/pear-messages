@@ -17,7 +17,7 @@ Elsewhere in app use [`pear-message`](https://github.com/holepunchto/pear-messag
 ```js
 import message from 'pear-message'
 
-await message({ some: 'props', to: {pattern: ['match', 'against'] }})
+await message({ some: 'props', to: { pattern: ['match', 'against'] } })
 ```
 
 Should log: `{ some: 'props', to: {pattern: ['match', 'against'] }}`
@@ -68,7 +68,9 @@ import messages from 'pear-messages'
 
 const ctaClicks = messages({ type: 'my-app/user-cta' })
 
-ctaClicks.on('data', (msg) => { console.log('cta click', msg) })
+ctaClicks.on('data', (msg) => {
+  console.log('cta click', msg)
+})
 
 // elsewhere
 onUserClickCta((event, data) => {

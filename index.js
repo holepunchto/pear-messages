@@ -1,6 +1,6 @@
 'use strict'
 const ref = require('pear-ref')
-function messages (pattern, listener) {
+function messages(pattern, listener) {
   const ipc = global.Pear?.[global.Pear?.constructor.IPC]
   if (!ipc) throw new Error('pear-messages is designed for Pear - IPC missing')
   if (typeof pattern === 'function') {
