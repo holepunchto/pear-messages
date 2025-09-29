@@ -2,9 +2,10 @@
 const test = require('brittle')
 const b4a = require('b4a')
 const sodium = require('sodium-native')
-const IPC = require('pear-ipc')
 const Iambus = require('iambus')
 const { isWindows } = require('which-runtime')
+const IPC = require('pear-ipc')
+global.Pear = {}
 const messages = require('..')
 
 function pipeId(s) {
